@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Find rental houses near your campus in Kenya. Browse vacant bedsitters, single rooms and more, then WhatsApp the landlord.">
-<title>Karibu Digz</title>
+<meta name="description" content="Kenyan Campus Rentals: find rental houses near your campus in Kenya. Browse vacant bedsitters, single rooms and more, then WhatsApp the landlord.">
+<title>Kenyan Campus Rentals | Rental houses near universities in Kenya</title>
+<link rel="canonical" href="https://muneshkinyua0-byte.github.io/karibu-digz/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kenyan Campus Rentals">
+<meta property="og:title" content="Kenyan Campus Rentals | Rental houses near universities in Kenya">
+<meta property="og:description" content="Kenyan Campus Rentals: find vacant bedsitters, single rooms and more near your campus in Kenya, then WhatsApp the landlord.">
+<meta property="og:url" content="https://muneshkinyua0-byte.github.io/karibu-digz/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0B5D3B">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kenyan Campus Rentals","alternateName":"Karibu Digz","url":"https://muneshkinyua0-byte.github.io/karibu-digz/"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -60,6 +70,7 @@ button{font-family:inherit;}
 .hero .wrap{position:relative; z-index:1;}
 .topbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:18px;}
 .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:1.25rem; letter-spacing:.04em; text-transform:uppercase;}
+@media (max-width:560px){.brand{font-size:1rem; letter-spacing:.02em;} .brand span{line-height:1.1;}}
 .brand svg{width:30px; height:30px; flex:none;}
 .ghost{background:rgba(255,255,255,.14); color:var(--hero-ink); border:1.5px solid rgba(255,255,255,.35); padding:.45rem .95rem; border-radius:999px; font-size:.88rem; font-weight:500; cursor:pointer;}
 .ghost:hover{background:rgba(255,255,255,.24);}
@@ -248,7 +259,7 @@ button{font-family:inherit;}
     <div class="topbar">
       <div class="brand">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 15 16 4l13 11" fill="none" stroke="#FFC21A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 14v13h18V14" fill="#FFC21A"/><rect x="13" y="19" width="6" height="8" rx="1" fill="#06382A"/></svg>
-        <span>Karibu Digz</span>
+        <span>Kenyan Campus Rentals</span>
       </div>
       <div class="tbtns">
         <button class="ghost" id="bgBtn" type="button" hidden>Hero photos</button>
@@ -279,7 +290,7 @@ button{font-family:inherit;}
       </div>
       <div class="verify" id="verify" hidden>
         <h3>Confirm it is genuine before you pay</h3>
-        <p>Every house on Karibu Digz can be checked with our admin. Call or WhatsApp first, and never send a deposit before you have confirmed.</p>
+        <p>Every house on Kenyan Campus Rentals can be checked with our admin. Call or WhatsApp first, and never send a deposit before you have confirmed.</p>
         <div class="vrow" id="verifyRow"></div>
       </div>
       <div class="panel suggest">
@@ -328,7 +339,7 @@ button{font-family:inherit;}
   </section>
 </main>
 
-<footer class="foot"><div class="wrap">Karibu Digz. Houses are added and checked by the Karibu Digz team.</div></footer>
+<footer class="foot"><div class="wrap">Kenyan Campus Rentals. Houses are added and checked by the Kenyan Campus Rentals team.</div></footer>
 
 <div class="modal-bg" id="modalBg" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -767,14 +778,14 @@ function cardHTML(d){
   const amen = (Array.isArray(d.amenities) ? d.amenities : []).map(a => `<span class="tag">${esc(a)}</span>`).join('');
   const phone = String(d.phone || '');
   const wa = waNumber(phone);
-  const msg = `Hi, I saw Residential ${d.n} (${d.area||''}) near ${state.uni.name} on Karibu Digz. Is it still vacant?`;
-  const shareText = `${label} near ${state.uni.name}, ${money(d.price)} per month. Found on Karibu Digz.` + (/^https?:/.test(location.href) ? ' ' + location.href : '');
+  const msg = `Hi, I saw Residential ${d.n} (${d.area||''}) near ${state.uni.name} on Kenyan Campus Rentals. Is it still vacant?`;
+  const shareText = `${label} near ${state.uni.name}, ${money(d.price)} per month. Found on Kenyan Campus Rentals.` + (/^https?:/.test(location.href) ? ' ' + location.href : '');
   const contactBtn = wa && status==='vacant'
     ? `<a class="wa" href="https://wa.me/${wa}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${waSVG}<span>Chat on WhatsApp</span></a>`
     : `<span class="wa off">${status==='taken' ? 'This house is taken' : 'Landlord number coming soon'}</span>`;
   const phoneRow = phone ? `<span class="phone">${esc(phone)}</span>` : '';
   const vwa = waNumber(contact.whatsapp);
-  const verifyLink = vwa ? `<a class="mini verifylink" href="https://wa.me/${vwa}?text=${encodeURIComponent(`Hi Karibu Digz admin, please confirm Residential ${d.n} (${d.area||''}) near ${state.uni.name} is genuine.`)}" target="_blank" rel="noopener">Confirm this listing with admin</a>` : '';
+  const verifyLink = vwa ? `<a class="mini verifylink" href="https://wa.me/${vwa}?text=${encodeURIComponent(`Hi Kenyan Campus Rentals admin, please confirm Residential ${d.n} (${d.area||''}) near ${state.uni.name} is genuine.`)}" target="_blank" rel="noopener">Confirm this listing with admin</a>` : '';
   const admin = isAdmin ? `<div class="adminrow">
       <button class="mini" type="button" data-act="status">${status==='vacant' ? 'Mark as taken' : 'Mark as vacant'}</button>
       <button class="mini danger" type="button" data-act="del">Delete</button>
@@ -817,7 +828,7 @@ function renderVerify(){
   box.hidden = !(wa || ph || isAdmin);
   if(box.hidden) return;
   const parts = [];
-  if(wa) parts.push(`<a class="wa" href="https://wa.me/${wa}?text=${encodeURIComponent('Hi Karibu Digz admin, I would like to confirm a house is genuine before I pay.')}" target="_blank" rel="noopener">${waSVG}<span>WhatsApp the admin</span></a>`);
+  if(wa) parts.push(`<a class="wa" href="https://wa.me/${wa}?text=${encodeURIComponent('Hi Kenyan Campus Rentals admin, I would like to confirm a house is genuine before I pay.')}" target="_blank" rel="noopener">${waSVG}<span>WhatsApp the admin</span></a>`);
   if(ph) parts.push(`<span class="vnum">Call ${esc(ph)}</span><a class="mini" href="tel:+${waNumber(ph)}">Call now</a><button class="mini" type="button" data-copy="${esc(ph)}">Copy number</button>`);
   if(!wa && !ph && isAdmin) parts.push('<span>Add the admin number that students use to confirm listings.</span>');
   if(isAdmin) parts.push(`<button class="mini" type="button" id="editContact">${(wa || ph) ? 'Edit admin contact' : 'Set admin contact'}</button>`);
