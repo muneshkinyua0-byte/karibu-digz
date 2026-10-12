@@ -245,7 +245,7 @@ button{font-family:inherit;}
       </div>
       <div class="tbtns">
         <button class="ghost" id="bgBtn" type="button" hidden>Hero photos</button>
-        <button class="ghost" id="authBtn" type="button">Sign in</button>
+        <button class="ghost" id="authBtn" type="button">Admin sign in</button>
         <button class="ghost" id="themeBtn" type="button">Dark mode</button>
       </div>
     </div>
@@ -277,7 +277,7 @@ button{font-family:inherit;}
       </div>
       <div class="panel suggest">
         <h3>Know a vacant house near campus?</h3>
-        <p class="sub">Send it to us (you will sign in with your email first). Once the admin has checked it, it appears on the site for every student.</p>
+        <p class="sub">Send it to us. Once the admin has checked it, it appears on the site for every student.</p>
         <div><button class="btn btn-solid" id="suggestBtn" type="button">Suggest a house</button></div>
       </div>
     </div>
@@ -472,15 +472,15 @@ button{font-family:inherit;}
 
 <div class="modal-bg" id="authBg" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-    <h3 id="authTitle">Sign in</h3>
-    <p class="sub" id="authSub">Browsing houses is always free. Sign in only to suggest a house.</p>
-    <button class="btn" id="googleBtn" type="button" hidden>Continue with Google</button>
-    <label class="lab" for="aEmail">Your email</label>
-    <input class="field" id="aEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@gmail.com">
-    <p class="fine">We email you a one-time sign-in link. No password needed.</p>
+    <h3 id="authTitle">Admin sign in</h3>
+    <p class="sub" id="authSub">This is for the site admin. Students do not need to sign in.</p>
+    <label class="lab" for="aEmail">Admin email</label>
+    <input class="field" id="aEmail" type="email" inputmode="email" autocomplete="username" placeholder="you@gmail.com">
+    <label class="lab" for="aPass">Password</label>
+    <input class="field" id="aPass" type="password" autocomplete="current-password">
     <div class="actions">
       <button class="btn" id="aCancel" type="button">Cancel</button>
-      <button class="btn btn-solid" id="aSend" type="button">Email me a sign-in link</button>
+      <button class="btn btn-solid" id="aSend" type="button">Sign in</button>
     </div>
     <p class="status" id="aStatus" role="status"></p>
   </div>
@@ -595,7 +595,7 @@ async function applySession(session){
   $('adminBtn').hidden = !isAdmin;
   $('reviewBtn').hidden = !isAdmin;
   $('bgBtn').hidden = !isAdmin;
-  $('authBtn').textContent = user ? 'Sign out' : 'Sign in';
+  $('authBtn').textContent = (user && !user.is_anonymous) ? 'Sign out' : 'Admin sign in';
   render();
   if(isAdmin) refreshPending(); else pending = [];
 }
@@ -1062,8 +1062,18 @@ $('bgList').addEventListener('click', async e => {
 
 const suggestBg = $('suggestBg'), sUni = $('sUni');
 UNIVERSITIES.slice().sort().forEach(n => { const o = document.createElement('option'); o.value = n; o.textContent = n; sUni.appendChild(o); });
-$('suggestBtn').onclick = () => {
-  if(!user){ openAuth('Sign in with your email to suggest a house. It only takes a minute.'); return; }
+async function ensureUser(){
+  if(user) return true;
+  if(!sb) return false;
+  try{
+    const {data, error} = await sb.auth.signInAnonymously();
+    if(error) throw error;
+    user = data.user;
+    return !!user;
+  }catch(e){ return false; }
+}
+$('suggestBtn').onclick = async () => {
+  if(!(await ensureUser())){ toast('Could not start. Please check your internet and try again.'); return; }
   if(state.uni) sUni.value = state.uni.name;
   $('sStatus').textContent = '';
   suggestBg.hidden = false;
@@ -1081,11 +1091,11 @@ $('sSend').onclick = async () => {
   if(!university || !area || !price || !phone){ st.textContent = 'University, area, rent and a phone number are required.'; return; }
   if(photos.length > 3){ st.textContent = 'Choose 3 photos or fewer.'; return; }
   if(!sb){ st.textContent = 'Sending is not available right now.'; return; }
-  if(!user){ suggestBg.hidden = true; openAuth('Please sign in to send a house.'); return; }
+  if(!(await ensureUser())){ st.textContent = 'Could not send. Please check your internet and try again.'; return; }
   btn.disabled = true; st.textContent = 'Preparing your house…';
   const uploaded = [];
   try{
-    const {count} = await sb.from('submissions').select('id', {count:'exact', head:true});
+    const {count} = await sb.from('submissions').select('id', {count:'exact', head:true}).eq('user_id', user.id);
     if((count || 0) >= 5){ st.textContent = 'You already have 5 houses waiting for review. Please wait for the admin.'; return; }
     const image_paths = [];
     for(let i=0;i<photos.length;i++){
@@ -1117,42 +1127,40 @@ $('sSend').onclick = async () => {
 /* ---------- sign in ---------- */
 const authBg = $('authBg');
 function openAuth(msg){
-  $('authSub').textContent = msg || 'Browsing houses is always free. Sign in only to suggest a house.';
+  $('authSub').textContent = msg || 'This is for the site admin. Students do not need to sign in.';
   $('aStatus').textContent = '';
-  $('googleBtn').hidden = !ENABLE_GOOGLE;
+  $('aPass').value = '';
   authBg.hidden = false;
   $('aEmail').focus();
 }
 const closeAuth = () => { authBg.hidden = true; };
 $('authBtn').onclick = async () => {
-  if(user){ try{ await sb.auth.signOut(); toast('Signed out.'); }catch(e){} }
+  if(user && !user.is_anonymous){ try{ await sb.auth.signOut(); toast('Signed out.'); }catch(e){} }
   else openAuth();
 };
 $('aCancel').onclick = closeAuth;
 authBg.addEventListener('click', e => { if(e.target===authBg) closeAuth(); });
 document.addEventListener('keydown', e => { if(e.key==='Escape' && !authBg.hidden) closeAuth(); });
-const backTo = () => location.origin + location.pathname;
 $('aSend').onclick = async () => {
   const st = $('aStatus'), btn = $('aSend');
-  const email = $('aEmail').value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ st.textContent = 'Enter a valid email address.'; return; }
+  const email = $('aEmail').value.trim(), password = $('aPass').value;
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !password){ st.textContent = 'Enter your email and password.'; return; }
   if(!sb){ st.textContent = 'Sign in is not available right now.'; return; }
-  btn.disabled = true; st.textContent = 'Sending…';
+  btn.disabled = true; st.textContent = 'Signing in…';
   try{
-    const {error} = await sb.auth.signInWithOtp({email, options:{emailRedirectTo: backTo()}});
+    const {error} = await sb.auth.signInWithPassword({email, password});
     if(error) throw error;
-    st.textContent = 'Check your email and tap the sign-in link. You will come back here signed in.';
+    $('aPass').value = '';
+    closeAuth();
+    toast('Signed in.');
   }catch(err){
-    st.textContent = (err && (err.status === 429 || /rate|seconds/i.test(err.message || ''))) ? 'Too many sign-in emails right now. Please wait a few minutes and try again.' : 'Could not send the email. Please try again.';
+    st.textContent = 'Wrong email or password.';
   }finally{
     btn.disabled = false;
   }
 };
-$('aEmail').addEventListener('keydown', e => { if(e.key==='Enter') $('aSend').click(); });
-$('googleBtn').onclick = async () => {
-  try{ await sb.auth.signInWithOAuth({provider:'google', options:{redirectTo: backTo()}}); }
-  catch(e){ $('aStatus').textContent = 'Could not start Google sign-in.'; }
-};
+$('aEmail').addEventListener('keydown', e => { if(e.key==='Enter') $('aPass').focus(); });
+$('aPass').addEventListener('keydown', e => { if(e.key==='Enter') $('aSend').click(); });
 /* ---------- admin review of submissions ---------- */
 
 async function loadSubmissions(){
