@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Kenyan Campus Rentals: find rental houses near your campus in Kenya. Browse vacant bedsitters, single rooms and more, then WhatsApp the landlord.">
-<title>Kenyan Campus Rentals | Rental houses near universities in Kenya</title>
+<meta name="description" content="Kenyan Campus Rentals: find rental houses near your campus in Kenya, and buy or sell second-hand items with fellow students, from laptops and fridges to books and furniture. Contact landlords and sellers on WhatsApp.">
+<title>Kenyan Campus Rentals | Student Houses + Buy &amp; Sell Second-Hand Items</title>
 <link rel="canonical" href="https://muneshkinyua0-byte.github.io/karibu-digz/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kenyan Campus Rentals">
-<meta property="og:title" content="Kenyan Campus Rentals | Rental houses near universities in Kenya">
-<meta property="og:description" content="Kenyan Campus Rentals: find vacant bedsitters, single rooms and more near your campus in Kenya, then WhatsApp the landlord.">
+<meta property="og:title" content="Kenyan Campus Rentals | Student Houses + Buy &amp; Sell Second-Hand Items">
+<meta property="og:description" content="Student houses near your campus in Kenya, plus a second-hand marketplace where campus students buy and sell laptops, fridges, books, furniture and more.">
 <meta property="og:url" content="https://muneshkinyua0-byte.github.io/karibu-digz/">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0B5D3B">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kenyan Campus Rentals","alternateName":"Karibu Digz","url":"https://muneshkinyua0-byte.github.io/karibu-digz/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kenyan Campus Rentals","alternateName":"Karibu Digz","description":"Student rental houses and a second-hand marketplace for campus students in Kenya","url":"https://muneshkinyua0-byte.github.io/karibu-digz/"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -191,6 +191,31 @@ button{font-family:inherit;}
 .tag{font-size:.78rem; font-weight:500; background:var(--chip); color:var(--ink); padding:.25rem .6rem; border-radius:8px;}
 .tag.walk{background:color-mix(in srgb,var(--pop) 35%,var(--chip)); font-weight:700;}
 .note{margin:0; font-size:.9rem; color:var(--muted);}
+button.wa{width:100%; border:0; font:inherit; font-weight:800; cursor:pointer;}
+.market{border-top:1px solid var(--line);}
+#marketNav{position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:7px; border:0; cursor:pointer; font-weight:800; letter-spacing:.01em; color:#2a1400; background:linear-gradient(135deg,#FFD23F 0%,#FF9A1F 55%,#FF5E3A 100%); padding:.5rem .9rem; border-radius:999px; box-shadow:0 0 0 0 rgba(255,154,31,.75), 0 6px 18px rgba(255,110,30,.45); animation:mpulse 1.9s ease-out infinite; transition:transform .15s ease;}
+#marketNav:hover{transform:translateY(-1px) scale(1.05);}
+#marketNav svg{width:18px; height:18px; flex:none;}
+#marketNav .newb{background:#1a1208; color:#FFD23F; font-size:.62rem; font-weight:800; letter-spacing:.08em; padding:2px 6px; border-radius:999px; line-height:1.3;}
+#marketNav::after{content:""; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.8),transparent); transform:skewX(-20deg); animation:mshine 2.8s ease-in-out infinite; pointer-events:none;}
+@keyframes mpulse{0%{box-shadow:0 0 0 0 rgba(255,154,31,.75), 0 6px 18px rgba(255,110,30,.45);} 70%{box-shadow:0 0 0 13px rgba(255,154,31,0), 0 6px 18px rgba(255,110,30,.45);} 100%{box-shadow:0 0 0 0 rgba(255,154,31,0), 0 6px 18px rgba(255,110,30,.45);}}
+@keyframes mshine{0%,55%{left:-60%;} 100%{left:130%;}}
+@media (prefers-reduced-motion: reduce){ #marketNav,#marketNav::after{animation:none;} }
+.mtag{color:var(--muted); margin:2px 0 0; font-size:.95rem;}
+.mbanner{padding:10px 0 4px;}
+.mbanner .box{position:relative; overflow:hidden; border-radius:24px; padding:28px 22px; color:#2a1400; background:linear-gradient(120deg,#FFD23F 0%,#FF9A1F 55%,#FF5E3A 100%); box-shadow:0 14px 34px rgba(255,110,30,.30); display:grid; gap:14px;}
+.mbanner .box::before{content:""; position:absolute; right:-50px; top:-60px; width:240px; height:240px; border-radius:50%; background:rgba(255,255,255,.22); pointer-events:none;}
+.mbanner .box::after{content:""; position:absolute; top:0; left:-60%; width:35%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); transform:skewX(-20deg); animation:mshine 4s ease-in-out infinite; pointer-events:none;}
+.mbanner h2{position:relative; font-family:var(--font-display); font-size:clamp(1.55rem,5vw,2.4rem); font-weight:800; line-height:1.05; color:#2a1400; max-width:20ch;}
+.mbanner p{position:relative; max-width:52ch; font-weight:500; color:#3a1f00;}
+.mbtags{position:relative; display:flex; flex-wrap:wrap; gap:8px;}
+.mbtags span{background:rgba(255,255,255,.6); padding:.3rem .75rem; border-radius:999px; font-weight:700; font-size:.85rem; color:#2a1400;}
+.mbacts{position:relative; display:flex; flex-wrap:wrap; gap:10px;}
+.mbacts button{font:inherit; font-weight:800; border:0; border-radius:14px; padding:.85rem 1.3rem; cursor:pointer; transition:transform .15s ease;}
+.mbacts button:hover{transform:translateY(-2px);}
+#mbBrowse{background:#1a1208; color:#FFD23F;}
+#mbSell{background:#fff; color:#2a1400;}
+@media (prefers-reduced-motion: reduce){ .mbanner .box::after{animation:none;} }
 .wa{display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; background:var(--wa); color:var(--on-wa); font-weight:800; padding:.8rem 1rem; border-radius:12px; transition:transform .15s ease;}
 .wa:hover{transform:translateY(-2px);}
 .wa.off{background:var(--chip); color:var(--muted); font-weight:500; pointer-events:none;}
@@ -263,6 +288,7 @@ button{font-family:inherit;}
       </div>
       <div class="tbtns">
         <button class="ghost" id="bgBtn" type="button" hidden>Hero photos</button>
+        <button class="ghost" id="marketNav" type="button"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.2 11h11l2-8H6.2"/></svg><span>Marketplace</span><span class="newb">NEW</span></button>
         <button class="ghost" id="authBtn" type="button">Admin sign in</button>
         <button class="ghost" id="themeBtn" type="button">Dark mode</button>
       </div>
@@ -270,7 +296,7 @@ button{font-family:inherit;}
     <div class="hero-copy">
       <p class="kicker"><span id="campusCount"></span> campuses across Kenya</p>
       <h1>Find a rental house <span class="hl">around your campus</span></h1>
-      <p class="lede">Pick your university, swipe through the houses nearby, then WhatsApp the landlord. Kaa karibu na gate.</p>
+      <p class="lede">Pick your university, swipe through the houses nearby, then WhatsApp the landlord. Kaa karibu na gate. Need a fridge, laptop or books? Buy and sell second-hand items with students on your campus.</p>
       <button class="cta" id="ctaBtn" type="button">Search your campus</button>
     </div>
   </div>
@@ -297,6 +323,20 @@ button{font-family:inherit;}
         <h3>Know a vacant house near campus?</h3>
         <p class="sub">Send it to us. Once the admin has checked it, it appears on the site for every student.</p>
         <div><button class="btn btn-solid" id="suggestBtn" type="button">Suggest a house</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mbanner" id="mBanner">
+    <div class="wrap">
+      <div class="box">
+        <h2>Buy and sell second-hand items on campus</h2>
+        <p>Laptops, fridges, books, mattresses and more, from students, for students. Every item has a photo and is checked by the admin before it goes live.</p>
+        <div class="mbtags"><span>Laptops</span><span>Fridges</span><span>Books</span><span>Furniture</span><span>Bedding</span><span>Phones</span></div>
+        <div class="mbacts">
+          <button id="mbBrowse" type="button">Browse the marketplace</button>
+          <button id="mbSell" type="button">Sell an item</button>
+        </div>
       </div>
     </div>
   </section>
@@ -337,9 +377,37 @@ button{font-family:inherit;}
       <div class="grid" id="grid"></div>
     </div>
   </section>
+  <section class="listings market" id="market">
+    <div class="wrap">
+      <div class="lhead">
+        <div>
+          <h2 id="mTitle">Buy &amp; sell second-hand items</h2>
+          <p class="mtag">From students, for students. Every item is checked by the admin.</p>
+          <p class="count" id="mCount"></p>
+        </div>
+        <div class="chips">
+          <button class="btn btn-solid" id="mAddBtn" type="button" hidden>Add item</button>
+          <button class="btn" id="mOrdersBtn" type="button" hidden>Orders</button>
+          <button class="btn" id="mReviewBtn" type="button" hidden>Review items</button>
+          <button class="btn btn-solid" id="sellBtn" type="button">Sell an item</button>
+        </div>
+      </div>
+      <div class="filters" id="mFilters">
+        <div class="fgroup">
+          <span class="flabel">Category</span>
+          <div class="chips" id="mCats"></div>
+        </div>
+        <div class="chips">
+          <button class="chip" id="mAvail" type="button" aria-pressed="true">Available only</button>
+        </div>
+      </div>
+      <div class="hint" id="mHint" hidden></div>
+      <div class="grid" id="mgrid"></div>
+    </div>
+  </section>
 </main>
 
-<footer class="foot"><div class="wrap">Kenyan Campus Rentals. Houses are added and checked by the Kenyan Campus Rentals team.</div></footer>
+<footer class="foot"><div class="wrap">Kenyan Campus Rentals. Houses and marketplace items are added and checked by the Kenyan Campus Rentals team. Students deal directly with each other: meet in public places and never pay before you have seen the item.</div></footer>
 
 <div class="modal-bg" id="modalBg" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -488,6 +556,112 @@ button{font-family:inherit;}
 </div>
 
 
+<div class="modal-bg" id="sellBg" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="sellTitle">
+    <h3 id="sellTitle">Sell an item</h3>
+    <p class="sub" id="slSub">The admin checks every item before it goes live. A clear photo of the item is required.</p>
+
+    <label class="lab" for="slUni">Your campus</label>
+    <select class="field" id="slUni"></select>
+
+    <label class="lab" for="slTitle">What are you selling?</label>
+    <input class="field" id="slTitle" type="text" maxlength="80" placeholder="e.g. HP laptop, 15 inch">
+
+    <div class="two">
+      <div>
+        <label class="lab" for="slCat">Category</label>
+        <select class="field" id="slCat"></select>
+      </div>
+      <div>
+        <label class="lab" for="slCond">Condition</label>
+        <select class="field" id="slCond"></select>
+      </div>
+    </div>
+
+    <div class="two">
+      <div>
+        <label class="lab" for="slPrice">Price (KSh)</label>
+        <input class="field" id="slPrice" type="number" inputmode="numeric" placeholder="2500">
+      </div>
+      <div>
+        <label class="lab" for="slName">Your name</label>
+        <input class="field" id="slName" type="text" maxlength="60" placeholder="e.g. Brian">
+      </div>
+    </div>
+
+    <label class="lab" for="slPhone">Your phone or WhatsApp</label>
+    <input class="field" id="slPhone" type="tel" placeholder="0712 345 678">
+
+    <label class="lab" for="slDesc">Description</label>
+    <textarea class="field" id="slDesc" maxlength="600" placeholder="Size, age, any faults, where to meet"></textarea>
+
+    <label class="lab" for="slImages">Photos (1 to 4, required)</label>
+    <input class="field" id="slImages" type="file" accept="image/*" multiple>
+
+    <p class="fine" id="slFine">Only the admin sees your phone number. Buyers contact you through the admin. If your item sells through this site, you pay the admin a <strong><span id="commPct">10</span>% commission</strong> once the sale is agreed. No stolen goods, drugs, alcohol, weapons or fake items. The admin may remove any listing.</p>
+    <div class="actions">
+      <button class="btn" id="slCancel" type="button">Cancel</button>
+      <button class="btn btn-solid" id="slSend" type="button">Send for review</button>
+    </div>
+    <p class="status" id="slStatus" role="status"></p>
+  </div>
+</div>
+
+<div class="modal-bg" id="buyBg" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="buyTitle">
+    <h3 id="buyTitle">Buy this item</h3>
+    <p class="sub" id="byItem"></p>
+    <div id="byForm">
+      <label class="lab" for="byName">Your name</label>
+      <input class="field" id="byName" type="text" maxlength="60" placeholder="e.g. Mercy">
+      <label class="lab" for="byPhone">Your phone or WhatsApp</label>
+      <input class="field" id="byPhone" type="tel" placeholder="0712 345 678">
+      <p class="fine">The admin will connect you with the seller. You pay the seller directly, and only after you have seen and checked the item. Meet in a public place on campus.</p>
+      <div class="actions">
+        <button class="btn" id="byCancel" type="button">Cancel</button>
+        <button class="btn btn-solid" id="bySend" type="button">Send request</button>
+      </div>
+      <p class="status" id="byStatus" role="status"></p>
+    </div>
+    <div id="byDone" hidden>
+      <p class="sub">Request received. Tap the button to message the admin on WhatsApp so they can connect you with the seller.</p>
+      <a class="wa" id="byWa" href="#" target="_blank" rel="noopener">Message admin on WhatsApp</a>
+      <div class="actions"><button class="btn" id="byClose" type="button">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="mrBg" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mrTitle">
+    <h3 id="mrTitle">Items waiting for review</h3>
+    <div id="mrList"></div>
+    <div class="actions">
+      <button class="btn" id="mrRefresh" type="button">Refresh</button>
+      <button class="btn btn-solid" id="mrClose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="odBg" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="odTitle">
+    <h3 id="odTitle">Orders</h3>
+    <p class="sub">Buyers pay sellers directly. Once a sale is agreed, the seller pays you the commission.</p>
+    <div class="two">
+      <div>
+        <label class="lab" for="odPct">Commission rate (%)</label>
+        <input class="field" id="odPct" type="number" min="0" max="50" step="1">
+      </div>
+      <div style="align-self:end"><button class="btn" id="odPctSave" type="button">Save rate</button></div>
+    </div>
+    <div id="odList"></div>
+    <div class="actions">
+      <button class="btn" id="odRefresh" type="button">Refresh</button>
+      <button class="btn btn-solid" id="odClose" type="button">Close</button>
+    </div>
+    <p class="status" id="odStatus" role="status"></p>
+  </div>
+</div>
+
 <div class="modal-bg" id="authBg" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
     <h3 id="authTitle">Admin sign in</h3>
@@ -615,6 +789,7 @@ async function applySession(session){
   $('bgBtn').hidden = !isAdmin;
   $('authBtn').textContent = (user && !user.is_anonymous) ? 'Sign out' : 'Admin sign in';
   render();
+  if(typeof applyMarketAdmin === 'function') applyMarketAdmin();
   if(isAdmin) refreshPending(); else pending = [];
 }
 const ready = (async function boot(){
@@ -682,6 +857,7 @@ function selectUni(name){
   searchBox.value = name;
   resultsBox.innerHTML = '';
   renderBg();
+  loadItems();
   $('listings').scrollIntoView({behavior:'smooth'});
   subscribe();
 }
@@ -1305,6 +1481,443 @@ $('contactSave').onclick = async () => {
     btn.disabled = false;
   }
 };
+
+
+/* ---------- marketplace ---------- */
+const CATS = ['Laptops & electronics','Phones & accessories','Books & notes','Fridges & appliances','Furniture','Bedding & mattresses','Kitchen & household','Clothes & shoes','Sports & fitness','Other'];
+const CONDS = ['New','Like new','Used'];
+const ORDER_STATUS = {new:'New request', agreed:'Deal agreed', sold:'Sold', commission_paid:'Commission paid', cancelled:'Cancelled'};
+let items = [], marketPct = 10, mCat = '', mAvail = true, mSubs = [], mOrders = [], buyItem = null, mTok = 0;
+
+const mapItem = r => ({
+  id:r.id, university:r.university, universityName:r.university_name, title:r.title, category:r.category,
+  condition:r.condition, price:r.price, description:r.description, imagePaths:r.image_paths || [],
+  status:r.status, createdAt:new Date(r.created_at).getTime()
+});
+const validPhone = p => String(p || '').replace(/\D/g,'').length >= 9;
+const fillSelect = (el, list) => list.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; el.appendChild(o); });
+fillSelect($('slCat'), CATS); fillSelect($('slCond'), CONDS); fillSelect($('slUni'), UNIVERSITIES.slice().sort());
+
+async function loadMarketSettings(){
+  try{
+    const {data} = await sb.from('settings').select('value').eq('key','market').maybeSingle();
+    const p = (data && data.value) ? Number(data.value.commission_pct) : NaN;
+    if(Number.isFinite(p) && p >= 0 && p <= 50) marketPct = p;
+  }catch(e){}
+  $('commPct').textContent = marketPct;
+  $('odPct').value = marketPct;
+}
+async function loadItems(){
+  if(!sb) return;
+  const my = ++mTok;
+  let q = sb.from('items').select('*').order('created_at', {ascending:false});
+  if(state.uni) q = q.eq('university', state.uni.slug);
+  const {data, error} = await q;
+  if(my !== mTok) return;
+  items = error ? [] : (data || []).map(mapItem);
+  renderMarket(error ? 'Could not load items right now. Please try again.' : '');
+}
+function itemCardHTML(it){
+  const sold = it.status === 'sold';
+  const imgs = (it.imagePaths || []).filter(isPath);
+  const slides = imgs.map(p => `<div class="slide"><img src="${esc(mediaUrl(p))}" alt="${esc(it.title)}" loading="lazy"></div>`);
+  if(!slides.length) slides.push('<div class="slide nophoto">No photo</div>');
+  const many = slides.length > 1;
+  const isNew = !sold && it.createdAt && (Date.now() - it.createdAt < 7*864e5);
+  const buy = sold ? '<span class="wa off">Sold</span>' : `<button class="wa" type="button" data-act="buy">${waSVG}<span>Buy via admin</span></button>`;
+  const admin = isAdmin ? `<div class="adminrow">
+      <button class="mini" type="button" data-act="sold">${sold ? 'Mark available' : 'Mark as sold'}</button>
+      <button class="mini danger" type="button" data-act="del">Delete</button>
+    </div>` : '';
+  return `<article class="card ${sold ? 'taken' : 'vacant'}" data-id="${esc(it.id)}">
+    <div class="media">
+      <div class="slides">${slides.join('')}</div>
+      <div class="flags"><span class="flag ${sold ? 'taken' : 'vacant'}">${sold ? 'Sold' : 'Available'}</span>${isNew ? '<span class="flag new">New</span>' : ''}</div>
+      ${many ? '<button class="arrow l" type="button" data-act="prev" aria-label="Previous photo">&#8249;</button><button class="arrow r" type="button" data-act="next" aria-label="Next photo">&#8250;</button>' : ''}
+      <div class="pricebar"><div class="price">${esc(money(it.price))}</div>${many ? '<div class="dots">' + slides.map((_,i) => `<span class="dot${i===0?' on':''}"></span>`).join('') + '</div>' : ''}</div>
+    </div>
+    <div class="cbody">
+      <div>
+        <h3 class="ctitle">${esc(it.title)}</h3>
+        ${state.uni ? '' : `<p class="where">${esc(it.universityName)}</p>`}
+      </div>
+      <div class="facts"><span class="tag">${esc(it.category)}</span><span class="tag">${esc(it.condition)}</span></div>
+      ${it.description ? `<p class="note">${esc(it.description)}</p>` : ''}
+      ${buy}
+      ${admin}
+    </div>
+  </article>`;
+}
+function renderMarket(errMsg){
+  $('mTitle').textContent = state.uni ? 'Second-hand deals near ' + state.uni.name : 'Buy & sell second-hand items';
+  $('mCats').innerHTML = ['All'].concat(CATS).map(c => {
+    const val = c === 'All' ? '' : c;
+    return `<button class="chip" type="button" data-cat="${esc(val)}" aria-pressed="${mCat === val}">${esc(c)}</button>`;
+  }).join('');
+  $('mAvail').setAttribute('aria-pressed', String(mAvail));
+  const list = items.filter(it => (!mCat || it.category === mCat) && (!mAvail || it.status === 'available'));
+  $('mCount').textContent = list.length ? list.length + (list.length === 1 ? ' item' : ' items') : '';
+  const hint = $('mHint');
+  if(errMsg){ hint.hidden = false; hint.innerHTML = '<strong>' + esc(errMsg) + '</strong>'; }
+  else if(!list.length){
+    hint.hidden = false;
+    hint.innerHTML = '<strong>Nothing here yet.</strong>' + (items.length ? 'Try another category, or untick Available only.' : 'Be the first to sell something. Tap Sell an item.');
+  } else hint.hidden = true;
+  $('mgrid').innerHTML = list.map(itemCardHTML).join('');
+}
+$('mCats').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if(!b) return; mCat = b.dataset.cat; renderMarket(); });
+$('mAvail').onclick = () => { mAvail = !mAvail; renderMarket(); };
+$('marketNav').onclick = () => $('market').scrollIntoView({behavior:'smooth'});
+$('mbBrowse').onclick = () => $('market').scrollIntoView({behavior:'smooth'});
+$('mbSell').onclick = () => $('sellBtn').click();
+
+$('mgrid').addEventListener('click', async e => {
+  const b = e.target.closest('[data-act]');
+  if(!b) return;
+  const card = b.closest('.card');
+  const id = card && card.dataset.id;
+  const act = b.dataset.act;
+  const it = items.find(x => x.id === id);
+  if(act === 'prev' || act === 'next'){
+    const s = card.querySelector('.slides');
+    s.scrollBy({left:(act === 'next' ? 1 : -1) * s.clientWidth, behavior: reduce.matches ? 'auto' : 'smooth'});
+  } else if(act === 'buy'){
+    if(it) openBuy(it);
+  } else if(act === 'sold'){
+    if(!it || !sb) return;
+    const {error} = await sb.from('items').update({status: it.status === 'sold' ? 'available' : 'sold'}).eq('id', id);
+    if(error) toast('Could not update this item.'); else await loadItems();
+  } else if(act === 'del'){
+    if(b.dataset.armed !== '1'){
+      b.dataset.armed = '1'; b.classList.add('armed'); b.textContent = 'Tap again to delete';
+      setTimeout(() => { if(b.isConnected){ b.dataset.armed = ''; b.classList.remove('armed'); b.textContent = 'Delete'; } }, 4000);
+      return;
+    }
+    if(!it || !sb) return;
+    const {error} = await sb.from('items').delete().eq('id', id);
+    if(error){ toast('Could not delete this item.'); return; }
+    await removeFiles(it.imagePaths);
+    toast('Item deleted.');
+    await loadItems();
+  }
+});
+
+/* ----- selling ----- */
+const sellBg = $('sellBg');
+let sellMode = 'student';
+function openSell(mode){
+  sellMode = mode;
+  const adm = mode === 'admin';
+  $('sellTitle').textContent = adm ? 'Add an item' : 'Sell an item';
+  $('slSub').textContent = adm ? 'This goes live straight away. At least one photo is required. The phone number is seen only by you.' : 'The admin checks every item before it goes live. A clear photo of the item is required.';
+  $('slSend').textContent = adm ? 'Publish now' : 'Send for review';
+  $('slFine').hidden = adm;
+  if(state.uni) $('slUni').value = state.uni.name;
+  $('slStatus').textContent = '';
+  sellBg.hidden = false;
+  $('slTitle').focus();
+}
+$('sellBtn').onclick = async () => {
+  if(!(await ensureUser())){ toast('Could not start. Please check your internet and try again.'); return; }
+  openSell('student');
+};
+$('mAddBtn').onclick = () => { if(isAdmin) openSell('admin'); };
+$('slCancel').onclick = () => { sellBg.hidden = true; };
+sellBg.addEventListener('click', e => { if(e.target === sellBg) sellBg.hidden = true; });
+$('slSend').onclick = async () => {
+  const st = $('slStatus'), btn = $('slSend');
+  const university = $('slUni').value, title = $('slTitle').value.trim(), price = Number($('slPrice').value);
+  const phone = $('slPhone').value.trim();
+  const photos = Array.from($('slImages').files);
+  if(title.length < 2){ st.textContent = 'Say what you are selling.'; return; }
+  if(!(price > 0)){ st.textContent = 'Enter the price in shillings.'; return; }
+  if(sellMode !== 'admin' && !validPhone(phone)){ st.textContent = 'Enter a phone number the admin can call or WhatsApp.'; return; }
+  if(!photos.length){ st.textContent = 'A photo of the item is required.'; return; }
+  if(photos.length > 4){ st.textContent = 'Choose 4 photos or fewer.'; return; }
+  if(!sb){ st.textContent = 'Sending is not available right now.'; return; }
+  if(!(await ensureUser())){ st.textContent = 'Could not send. Please check your internet and try again.'; return; }
+  if(sellMode === 'admin'){
+    if(!isAdmin){ st.textContent = 'Please sign in as the admin first.'; return; }
+    btn.disabled = true; st.textContent = 'Uploading…';
+    const up = [];
+    try{
+      const image_paths = [];
+      for(let i = 0; i < photos.length; i++){
+        st.textContent = `Uploading photo ${i+1} of ${photos.length}…`;
+        const blob = await shrink(photos[i], 1280);
+        const type = blob.type || photos[i].type;
+        const ext = extOf(type);
+        if(!ext || !/^image\//.test(type)){ st.textContent = 'Use JPG, PNG or WebP photos.'; await removeFiles(up); return; }
+        const p = await uploadFile('items/' + newName(ext), blob, type);
+        up.push(p); image_paths.push(p);
+      }
+      st.textContent = 'Publishing…';
+      const ins = await sb.from('items').insert({
+        university: slugify(String(university)), university_name: String(university), title,
+        category: $('slCat').value, condition: $('slCond').value, price,
+        description: $('slDesc').value.trim(), image_paths, status: 'available'
+      }).select('id').single();
+      if(ins.error) throw ins.error;
+      const c = await sb.from('item_contacts').insert({item_id: ins.data.id, seller_name: $('slName').value.trim(), seller_phone: phone || String(contact.whatsapp || '')});
+      if(c.error){ await sb.from('items').delete().eq('id', ins.data.id); throw c.error; }
+      ['slTitle','slPrice','slName','slPhone','slDesc','slImages'].forEach(id => { $(id).value = ''; });
+      st.textContent = '';
+      sellBg.hidden = true;
+      toast('Item published.');
+      await loadItems();
+    }catch(err){
+      await removeFiles(up);
+      st.textContent = 'Could not publish: ' + ((err && err.message) ? err.message : 'check that you are signed in as the admin.');
+    }finally{
+      btn.disabled = false;
+    }
+    return;
+  }
+  btn.disabled = true; st.textContent = 'Preparing your item…';
+  const uploaded = [];
+  try{
+    const {count} = await sb.from('item_submissions').select('id', {count:'exact', head:true}).eq('user_id', user.id);
+    if((count || 0) >= 5){ st.textContent = 'You already have 5 items waiting for review. Please wait for the admin.'; return; }
+    const image_paths = [];
+    for(let i = 0; i < photos.length; i++){
+      st.textContent = `Uploading photo ${i+1} of ${photos.length}…`;
+      const blob = await shrink(photos[i], 1280);
+      const type = blob.type || photos[i].type;
+      const ext = extOf(type);
+      if(!ext || !/^image\//.test(type)){ st.textContent = 'Use JPG, PNG or WebP photos.'; await removeFiles(uploaded); return; }
+      const p = await uploadFile('submissions/' + user.id + '/' + newName(ext), blob, type);
+      uploaded.push(p); image_paths.push(p);
+    }
+    st.textContent = 'Sending…';
+    const {error} = await sb.from('item_submissions').insert({
+      university, title, category: $('slCat').value, condition: $('slCond').value, price,
+      description: $('slDesc').value.trim(), seller_name: $('slName').value.trim(), seller_phone: phone, image_paths
+    });
+    if(error) throw error;
+    ['slTitle','slPrice','slName','slPhone','slDesc','slImages'].forEach(id => { $(id).value = ''; });
+    st.textContent = '';
+    sellBg.hidden = true;
+    toast('Thank you. The admin will check your item before it goes live.');
+  }catch(err){
+    await removeFiles(uploaded);
+    st.textContent = (err && /limit_reached/.test(err.message || '')) ? 'You already have 5 items waiting for review. Please wait for the admin.' : 'Could not send. Please try again.';
+  }finally{
+    btn.disabled = false;
+  }
+};
+
+/* ----- buying ----- */
+const buyBg = $('buyBg');
+function openBuy(it){
+  buyItem = it;
+  $('byItem').textContent = it.title + ' · ' + money(it.price) + ' · ' + it.universityName;
+  $('byForm').hidden = false; $('byDone').hidden = true; $('byStatus').textContent = '';
+  buyBg.hidden = false;
+  $('byName').focus();
+}
+$('byCancel').onclick = () => { buyBg.hidden = true; };
+$('byClose').onclick = () => { buyBg.hidden = true; };
+buyBg.addEventListener('click', e => { if(e.target === buyBg) buyBg.hidden = true; });
+$('bySend').onclick = async () => {
+  const st = $('byStatus'), btn = $('bySend');
+  const name = $('byName').value.trim(), phone = $('byPhone').value.trim();
+  if(!name){ st.textContent = 'Enter your name.'; return; }
+  if(!validPhone(phone)){ st.textContent = 'Enter a phone number the admin can reach you on.'; return; }
+  if(!buyItem || !sb){ st.textContent = 'Sending is not available right now.'; return; }
+  btn.disabled = true; st.textContent = 'Sending…';
+  try{
+    if(!(await ensureUser())) throw new Error('no session');
+    const {data, error} = await sb.from('orders').insert({item_id:buyItem.id, item_title:buyItem.title, buyer_name:name, buyer_phone:phone}).select('id').single();
+    if(error) throw error;
+    const ref = String(data.id).slice(0,6).toUpperCase();
+    const wa = waNumber(contact.whatsapp);
+    const msg = `Hi, I want to buy "${buyItem.title}" (${money(buyItem.price)}) near ${buyItem.universityName} on Kenyan Campus Rentals. My name is ${name}, phone ${phone}. Order ref ${ref}.`;
+    $('byWa').href = wa ? `https://wa.me/${wa}?text=${encodeURIComponent(msg)}` : '#';
+    $('byForm').hidden = true; $('byDone').hidden = false;
+    $('byName').value = ''; $('byPhone').value = '';
+  }catch(err){
+    st.textContent = (err && /limit_reached/.test(err.message || '')) ? 'You have too many open requests. Please wait for the admin.' : 'Could not send. Please try again.';
+  }finally{
+    btn.disabled = false;
+  }
+};
+
+/* ----- admin: review items ----- */
+async function loadItemSubs(){
+  if(!sb || !isAdmin) return [];
+  const {data, error} = await sb.from('item_submissions').select('*').order('created_at', {ascending:true});
+  if(error) throw error;
+  return (data || []).map(r => ({
+    id:r.id, university:r.university, title:r.title, category:r.category, condition:r.condition, price:r.price,
+    description:r.description, sellerName:r.seller_name, sellerPhone:r.seller_phone, imagePaths:r.image_paths || []
+  }));
+}
+function renderMReview(){
+  const list = $('mrList');
+  if(!mSubs.length){ list.innerHTML = '<div class="empty">No items are waiting for review.</div>'; return; }
+  list.innerHTML = mSubs.map((s,i) => {
+    const thumbs = s.imagePaths.filter(isPath).map(p => `<img src="${esc(mediaUrl(p))}" alt="Item photo">`).join('');
+    return `<div class="sub-item" data-i="${i}">
+      <strong>${esc(s.title)}</strong>
+      <div>${esc(s.university)} · ${esc(s.category)} · ${esc(s.condition)} · ${esc(money(s.price))}</div>
+      ${s.description ? `<div class="note">${esc(s.description)}</div>` : ''}
+      <div>Seller: ${esc(s.sellerName || 'No name')} · <span class="phone">${esc(s.sellerPhone)}</span></div>
+      ${thumbs ? `<div class="thumbs">${thumbs}</div>` : ''}
+      <div class="adminrow">
+        <button class="mini approve" type="button" data-r="approve">Approve and publish</button>
+        <button class="mini danger" type="button" data-r="reject">Reject</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+$('mReviewBtn').onclick = async () => { $('mrList').innerHTML = '<div class="empty">Loading…</div>'; $('mrBg').hidden = false; await refreshMarketAdmin(); renderMReview(); };
+$('mrRefresh').onclick = async () => { $('mrList').innerHTML = '<div class="empty">Loading…</div>'; await refreshMarketAdmin(); renderMReview(); };
+$('mrClose').onclick = () => { $('mrBg').hidden = true; };
+$('mrBg').addEventListener('click', e => { if(e.target === $('mrBg')) $('mrBg').hidden = true; });
+$('mrList').addEventListener('click', async e => {
+  const b = e.target.closest('[data-r]');
+  if(!b || !sb || !isAdmin) return;
+  const s = mSubs[Number(b.closest('.sub-item').dataset.i)];
+  if(!s) return;
+  if(b.dataset.r === 'reject'){
+    if(b.dataset.armed !== '1'){
+      b.dataset.armed = '1'; b.classList.add('armed'); b.textContent = 'Tap again to reject';
+      setTimeout(() => { if(b.isConnected){ b.dataset.armed = ''; b.classList.remove('armed'); b.textContent = 'Reject'; } }, 4000);
+      return;
+    }
+    const {error} = await sb.from('item_submissions').delete().eq('id', s.id);
+    if(error){ toast('Could not reject this item.'); return; }
+    await removeFiles(s.imagePaths);
+    toast('Item rejected.');
+    await refreshMarketAdmin(); renderMReview();
+    return;
+  }
+  b.disabled = true; b.textContent = 'Publishing…';
+  try{
+    const ins = await sb.from('items').insert({
+      university: slugify(String(s.university)), university_name: String(s.university), title: s.title,
+      category: s.category, condition: s.condition, price: Number(s.price), description: s.description || '',
+      image_paths: s.imagePaths.filter(isPath), status: 'available'
+    }).select('id').single();
+    if(ins.error) throw ins.error;
+    const c = await sb.from('item_contacts').insert({item_id: ins.data.id, seller_name: s.sellerName || '', seller_phone: s.sellerPhone});
+    if(c.error){ await sb.from('items').delete().eq('id', ins.data.id); throw c.error; }
+    const del = await sb.from('item_submissions').delete().eq('id', s.id);
+    toast(del.error ? 'Published, but could not clear it from the waiting list. Reject the duplicate.' : 'Approved. The item is now live.');
+    await refreshMarketAdmin(); renderMReview();
+    await loadItems();
+  }catch(err){
+    b.disabled = false; b.textContent = 'Approve and publish';
+    toast('Could not publish this item.');
+  }
+});
+
+/* ----- admin: orders ----- */
+async function loadOrders(){
+  if(!sb || !isAdmin) return [];
+  const {data:os, error} = await sb.from('orders').select('*').order('created_at', {ascending:false});
+  if(error) throw error;
+  const ids = [...new Set((os || []).map(o => o.item_id).filter(Boolean))];
+  const itemMap = {}, contactMap = {};
+  if(ids.length){
+    const [a, c] = await Promise.all([
+      sb.from('items').select('id,title,price,university_name,status').in('id', ids),
+      sb.from('item_contacts').select('*').in('item_id', ids)
+    ]);
+    (a.data || []).forEach(x => { itemMap[x.id] = x; });
+    (c.data || []).forEach(x => { contactMap[x.item_id] = x; });
+  }
+  return (os || []).map(o => {
+    const it = itemMap[o.item_id] || null, ct = contactMap[o.item_id] || {};
+    return {
+      id:o.id, itemId:o.item_id, title:(it && it.title) || o.item_title || 'Item', price: it ? it.price : null,
+      campus: it ? it.university_name : '', buyerName:o.buyer_name, buyerPhone:o.buyer_phone,
+      sellerName:ct.seller_name || '', sellerPhone:ct.seller_phone || '', status:o.status, createdAt:new Date(o.created_at).getTime()
+    };
+  });
+}
+function renderOrders(){
+  const list = $('odList');
+  if(!mOrders.length){ list.innerHTML = '<div class="empty">No orders yet.</div>'; return; }
+  list.innerHTML = mOrders.map((o,i) => {
+    const comm = (o.price !== null) ? Math.round(o.price * marketPct / 100) : null;
+    const bw = waNumber(o.buyerPhone), sw = waNumber(o.sellerPhone);
+    const bMsg = encodeURIComponent(`Hi ${o.buyerName}, this is Kenyan Campus Rentals about "${o.title}".`);
+    const sMsg = encodeURIComponent(`Hi${o.sellerName ? ' ' + o.sellerName : ''}, this is Kenyan Campus Rentals. A buyer wants "${o.title}". Is it still available?`);
+    const opts = Object.keys(ORDER_STATUS).map(k => `<option value="${k}"${k === o.status ? ' selected' : ''}>${esc(ORDER_STATUS[k])}</option>`).join('');
+    return `<div class="sub-item" data-i="${i}">
+      <strong>${esc(o.title)}</strong>
+      <div>${o.price !== null ? esc(money(o.price)) : 'Price unknown'}${o.campus ? ' · ' + esc(o.campus) : ''}${comm !== null ? ' · Commission due: ' + esc(money(comm)) + ' (' + marketPct + '%)' : ''}</div>
+      <div>Buyer: ${esc(o.buyerName)} · <span class="phone">${esc(o.buyerPhone)}</span></div>
+      <div>Seller: ${esc(o.sellerName || 'No name')} · <span class="phone">${esc(o.sellerPhone || 'unknown')}</span></div>
+      <select class="field" data-ostatus aria-label="Order status">${opts}</select>
+      <div class="adminrow">
+        ${bw ? `<a class="mini" href="https://wa.me/${bw}?text=${bMsg}" target="_blank" rel="noopener">WhatsApp buyer</a>` : ''}
+        ${sw ? `<a class="mini" href="https://wa.me/${sw}?text=${sMsg}" target="_blank" rel="noopener">WhatsApp seller</a>` : ''}
+        <button class="mini danger" type="button" data-odel>Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+$('mOrdersBtn').onclick = async () => { $('odList').innerHTML = '<div class="empty">Loading…</div>'; $('odStatus').textContent = ''; $('odBg').hidden = false; await refreshMarketAdmin(); renderOrders(); };
+$('odRefresh').onclick = async () => { $('odList').innerHTML = '<div class="empty">Loading…</div>'; await refreshMarketAdmin(); renderOrders(); };
+$('odClose').onclick = () => { $('odBg').hidden = true; };
+$('odBg').addEventListener('click', e => { if(e.target === $('odBg')) $('odBg').hidden = true; });
+$('odPctSave').onclick = async () => {
+  const v = Number($('odPct').value), st = $('odStatus');
+  if(!Number.isFinite(v) || v < 0 || v > 50){ st.textContent = 'Enter a rate between 0 and 50.'; return; }
+  if(!sb || !isAdmin){ st.textContent = 'Please sign in as the admin first.'; return; }
+  const {error} = await sb.from('settings').upsert({key:'market', value:{commission_pct:v}});
+  if(error){ st.textContent = 'Could not save the rate.'; return; }
+  marketPct = v; $('commPct').textContent = v; st.textContent = 'Saved.'; renderOrders();
+};
+$('odList').addEventListener('change', async e => {
+  const sel = e.target.closest('[data-ostatus]');
+  if(!sel || !sb || !isAdmin) return;
+  const o = mOrders[Number(sel.closest('.sub-item').dataset.i)];
+  if(!o) return;
+  const {error} = await sb.from('orders').update({status: sel.value}).eq('id', o.id);
+  if(error){ toast('Could not update this order.'); return; }
+  if((sel.value === 'sold' || sel.value === 'commission_paid') && o.itemId){
+    await sb.from('items').update({status:'sold'}).eq('id', o.itemId);
+    loadItems();
+  }
+  await refreshMarketAdmin(); renderOrders();
+});
+$('odList').addEventListener('click', async e => {
+  const b = e.target.closest('[data-odel]');
+  if(!b || !sb || !isAdmin) return;
+  if(b.dataset.armed !== '1'){
+    b.dataset.armed = '1'; b.classList.add('armed'); b.textContent = 'Tap again to delete';
+    setTimeout(() => { if(b.isConnected){ b.dataset.armed = ''; b.classList.remove('armed'); b.textContent = 'Delete'; } }, 4000);
+    return;
+  }
+  const o = mOrders[Number(b.closest('.sub-item').dataset.i)];
+  if(!o) return;
+  const {error} = await sb.from('orders').delete().eq('id', o.id);
+  if(error){ toast('Could not delete this order.'); return; }
+  await refreshMarketAdmin(); renderOrders();
+});
+
+async function refreshMarketAdmin(){
+  try{ mSubs = await loadItemSubs(); }catch(e){ mSubs = []; }
+  try{ mOrders = await loadOrders(); }catch(e){ mOrders = []; }
+  $('mReviewBtn').textContent = 'Review items' + (mSubs.length ? ' (' + mSubs.length + ')' : '');
+  const fresh = mOrders.filter(o => o.status === 'new').length;
+  $('mOrdersBtn').textContent = 'Orders' + (fresh ? ' (' + fresh + ')' : '');
+}
+function applyMarketAdmin(){
+  $('mAddBtn').hidden = !isAdmin;
+  $('mReviewBtn').hidden = !isAdmin;
+  $('mOrdersBtn').hidden = !isAdmin;
+  renderMarket();
+  if(isAdmin) refreshMarketAdmin(); else { mSubs = []; mOrders = []; }
+}
+document.addEventListener('keydown', e => {
+  if(e.key !== 'Escape') return;
+  ['sellBg','buyBg','mrBg','odBg'].forEach(id => { $(id).hidden = true; });
+});
+ready.then(() => { loadMarketSettings(); loadItems(); });
 
 render();
 </script>
